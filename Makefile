@@ -77,3 +77,5 @@ box2d.js: box2d.bc
 clean:
 	rm -f box2d.js box2d.bc $(OBJECTS) box2d_bindings.cpp box2d_bindings.bc box2d.clean.h
 
+box2d.umd.js:
+	cat box2d.umd.start.frag box2d.js box2d.umd.end.frag > box2d.umd.js
