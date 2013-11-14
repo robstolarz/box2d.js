@@ -14,7 +14,7 @@ BUILD := min
 
 ifeq ($(BUILD), debug)
 	OPTS = -O0 -g2
-	LINK_OPTS = -g4 --llvm-lto 0 -s NO_FILESYSTEM=1 -s NO_BROWSER=1 -s ASSERTIONS=2 --closure 0  -s DEMANGLE_SUPPORT=1 
+	LINK_OPTS = -g4 --llvm-lto 0 -s NO_FILESYSTEM=1 -s NO_BROWSER=1 -s ASSERTIONS=2 --closure 0  -s DEMANGLE_SUPPORT=1
 else
 	OPTS = -Os
 	LINK_OPTS =  -O3 --llvm-lto 1 -s NO_FILESYSTEM=1 -s NO_BROWSER=1  --closure 1  --js-transform "python bundle.py"
@@ -98,7 +98,9 @@ box2d.js: box2d.bc box2d_glue.cpp box2d_glue.h
 
 clean: remove
 	rm -f $(OBJECTS)
-	
+
 remove:
 	rm -f box2d.bc box2d_bindings.cpp box2d_bindings.bc box2d.clean.h box2d_glue.js box2d_glue.cpp WebIDLGrammar.pkl parser.out
 
+box2d.umd.js:
+	cat box2d.umd.start.frag build/Box2D_v2.3.1_min.js box2d.umd.end.frag > box2d.umd.js
