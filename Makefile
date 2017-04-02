@@ -102,5 +102,7 @@ clean: remove
 remove:
 	rm -f box2d.bc box2d_bindings.cpp box2d_bindings.bc box2d.clean.h box2d_glue.js box2d_glue.cpp WebIDLGrammar.pkl parser.out
 
-box2d.umd.js:
-	cat box2d.umd.start.frag build/Box2D_v2.3.1_min.js box2d.umd.end.frag > box2d.umd.js
+index.js:
+	echo 'var c={};(function(){' > index.js
+	cat build/Box2D_v2.3.1_min.js >> index.js
+	echo '}).call(c);module.exports=c.Box2D;' >> index.js
