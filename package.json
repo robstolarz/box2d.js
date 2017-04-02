@@ -1,8 +1,9 @@
 {
   "name": "box2d.js",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Alon Zakai <kripken>",
   "description": "Port of Box2D to JavaScript using Emscripten",
+  "main": "box2d.min.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/kripken/box2d.js"

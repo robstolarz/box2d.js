@@ -102,7 +102,7 @@ clean: remove
 remove:
 	rm -f box2d.bc box2d_bindings.cpp box2d_bindings.bc box2d.clean.h box2d_glue.js box2d_glue.cpp WebIDLGrammar.pkl parser.out
 
-index.js:
-	echo 'var c={};(function(){' > index.js
-	cat build/Box2D_v2.3.1_min.js >> index.js
-	echo '}).call(c);module.exports=c.Box2D;' >> index.js
+box2d.min.js:
+	echo 'var c={};(function(){' > box2d.min.js
+	cat build/Box2D_v2.3.1_min.js >> box2d.min.js
+	echo '}).call(c);module.exports=c.Box2D;' >> box2d.min.js
