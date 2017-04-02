@@ -1,6 +1,6 @@
 {
   "name": "box2d.js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Alon Zakai <kripken>",
   "description": "Port of Box2D to JavaScript using Emscripten",
   "main": "box2d.umd.js",
